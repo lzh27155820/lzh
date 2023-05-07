@@ -5,7 +5,7 @@ import '../user/index.dart';
 import '../member/index.dart';
 import '../publishVideo/index.dart';
 import '../dynamically/index.dart';
-import '../../fonts/HomeFont.dart';
+import '../../fonts/Fonts.dart';
 class NavigationBar extends StatelessWidget {
 
 

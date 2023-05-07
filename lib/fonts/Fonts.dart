@@ -52,4 +52,24 @@ static const IconData uploading =
 
        static const IconData customerServiceStaff =
       IconData(0xe60b, fontFamily: "bili", matchTextDirection: true);
+
+      
+    // 消息
+       static const IconData addressList =
+      IconData(0xe60c, fontFamily: "bili", matchTextDirection: true);
+
+ static const IconData replyToMyMail =
+      IconData(0xe640, fontFamily: "bili");
+      static const IconData my =
+      IconData(0xe778, fontFamily: "bili", matchTextDirection: true);
+     static const IconData receivePraise =
+      IconData(0xe614, fontFamily: "bili", matchTextDirection: true);
+
+        static const IconData systemMessage =
+      IconData(0xe62d, fontFamily: "bili", matchTextDirection: true);
+
+ static const IconData verticalPoint =
+      IconData(0xe608, fontFamily: "bili", matchTextDirection: true);
+
+      
 }

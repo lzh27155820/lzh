@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../fonts/HomeFont.dart';
+import '../../fonts/Fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui';
 import 'package:lzh/widget/circle.dart';

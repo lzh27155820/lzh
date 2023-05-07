@@ -6,6 +6,41 @@
   "description": "哔哩哔哩图标",
   "glyphs": [
     {
+      "icon_id": "2772109",
+      "name": "通信录",
+      "font_class": "tongxinlu1-copy",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "7800249",
+      "name": "收到的赞",
+      "font_class": "shoudaodezan",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "8247059",
+      "name": "系统通知",
+      "font_class": "xitongtongzhi",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "9986768",
+      "name": "回复我的",
+      "font_class": "huifuwode",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "20139292",
+      "name": "回复我的",
+      "font_class": "huifuwode1",
+      "unicode": "e778",
+      "unicode_decimal": 59256
+    },
+    {
       "icon_id": "3640183",
       "name": "客服",
       "font_class": "kefu",

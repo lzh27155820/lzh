@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../fonts/HomeFont.dart';
+import '../../fonts/Fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui';
 import 'package:lzh/widget/circle.dart';
@@ -419,14 +419,23 @@ class UserTextIcon extends StatelessWidget {
     return Column(
       // mainAxisAlignment:MainAxisAlignment.,
       children: [
-        Icon(
-          iconData,
-          color: iconColor,
-          size: iconSize.sp,
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
+
+        Container(
+          width: 40,
+          height: 30,
+          child: IconButton(
+            
+            padding: EdgeInsets.all(0),
+            onPressed: (){}, icon: Icon(
+            iconData,
+            color: iconColor,
+            size: iconSize.sp,
+          )),
+        )
+        ,
+        // SizedBox(
+        //   height: 5.h,
+        // ),
         Text(
           title,
           style: TextStyle(fontSize: titleSize.sp),
