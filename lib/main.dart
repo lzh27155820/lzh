@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import './routers/index.dart';
+import 'utils/shared_preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); //不加这个强制横/竖屏会报错
@@ -19,8 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
- // 1.手机的物理分辨率
+    // 1.手机的物理分辨率
     final physicalWidth = window.physicalSize.width;
     final physicalHeight = window.physicalSize.height;
 
@@ -34,30 +34,30 @@ class MyApp extends StatelessWidget {
     print("屏幕高$screenHeight 宽$screenWidth");
 
     //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
+    // 初始化 存储
+    ///PersistentStorage.getInstance();
     return ScreenUtilInit(
       // designSize: const Size(360, 690),
-      designSize:  Size(screenWidth, screenHeight),
+      designSize: Size(screenWidth, screenHeight),
 
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context , child) {
+      builder: (context, child) {
         return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'First Method',
+            theme: ThemeData(
+              // scaffoldBackgroundColor: const Color(0xFFEFEFEF),
+              primarySwatch: Colors.blue,
+              textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
 
-          debugShowCheckedModeBanner: false,
-          title: 'First Method',
-
-          theme: ThemeData(
-            // scaffoldBackgroundColor: const Color(0xFFEFEFEF),
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-            ///全局取消水波纹
-            splashColor: Colors.transparent, // 点击时的高亮效果设置为透明
-            highlightColor: Colors.transparent, // 长按时的扩散效果设置为透明
-          ),
-          // home: child,
-          initialRoute: "/",
-          getPages: Routers.routers
-        );
+              ///全局取消水波纹
+              splashColor: Colors.transparent, // 点击时的高亮效果设置为透明
+              highlightColor: Colors.transparent, // 长按时的扩散效果设置为透明
+            ),
+            // home: child,
+            initialRoute: "/",
+            getPages: Routers.routers);
       },
 
       // child: const HomePage(title: 'First Method'),

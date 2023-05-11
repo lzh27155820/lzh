@@ -3,8 +3,12 @@
 import 'dart:ui';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lzh/utils/colorUtils.dart';
+import 'package:lzh/utils/dio_request.dart';
+import 'package:lzh/utils/shared_preferences.dart';
 // 封装组件
+// import '';
 import 'package:lzh/widget/MyAppBar.dart';
 
 class Login extends StatelessWidget {
@@ -18,7 +22,7 @@ class Login extends StatelessWidget {
 
     print(Theme.of(context).colorScheme.brightness == Brightness.dark);
 
-   //print(Theme.of(context).accentColor);
+    //print(Theme.of(context).accentColor);
     return Scaffold(
       // appBar:
       body: Container(
@@ -38,10 +42,12 @@ class Login extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       "注册账号",
-                      style: TextStyle(fontSize: 14, color: ColorUtils.sysColorText(context)),
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: ColorUtils.sysColorText(context)),
                     ))
               ],
-              backgroundColor: ColorUtils.sysColorBag(context) ,
+              backgroundColor: ColorUtils.sysColorBag(context),
               elevation: 10,
             ),
             LoginForm()
@@ -57,14 +63,38 @@ class LoginForm extends StatelessWidget {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   LoginForm({super.key});
-  void _submitForm() {
+  void _submitForm() async {
     print("xxxx");
-    final isValid = _formKey.currentState?.validate() ?? false;
-    if (!isValid) {
-      return;
-    }
+    // final isValid = _formKey.currentState?.validate() ?? false;
+    // if (!isValid) {
+    //   return;
+    // }
     var username = _usernameController.value;
-    var password = _usernameController.value;
+    var password = _passwordController.value;
+
+    // var user = new User();
+    // user.password.value = password.text;
+
+    var result = await DioUtil.instance!.request("/chat/user/login",
+        data: {"username": username.text, "password": password.text},
+        method: DioMethod.post);
+    print("登入的数据${result.toString()} 类型 ${result.runtimeType}");
+
+    var p = await PersistentStorage.getInstance();
+
+    // print(result["data"]["token"]);
+
+    p.setLocalStorage("token", result["data"]["token"]);
+
+    var s = p.getLocalStorage("lll");
+    print(
+        "${s == null} 类型 为 ${p.getLocalStorage("token").runtimeType} 值 ${p.getLocalStorage("token")}");
+
+    var results = await DioUtil.instance!.request(
+      "/chat/user/info",
+    );
+
+    print(results.toString());
   }
 
   @override
@@ -110,5 +140,25 @@ class LoginForm extends StatelessWidget {
             ],
           ),
         ));
+  }
+}
+
+class User extends GetxController {
+
+  
+  var id = 0.obs;
+  var username = "".obs;
+  var password = "".obs;
+  var phone = "".obs;
+  var sex = "".obs;
+  var imgUrl = "".obs;
+  //  var username = "".obs;
+  var date = DateTime.now().obs;
+
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
   }
 }

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-
+// import 'package:/dio_request.dart';
 class Bli {
+
+  void ss(){
+    
+  }
   static const IconData fengche =
       IconData(0xe827, fontFamily: "bili", matchTextDirection: true);
   static const IconData diantai =
@@ -70,6 +74,7 @@ static const IconData uploading =
 
  static const IconData verticalPoint =
       IconData(0xe608, fontFamily: "bili", matchTextDirection: true);
-
+ static const IconData photograph =
+      IconData(0xe615, fontFamily: "bili", matchTextDirection: true);
       
 }

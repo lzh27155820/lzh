@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lzh/fonts/Fonts.dart';
 import 'package:lzh/utils/colorUtils.dart';
 import 'package:lzh/widget/MyAppBar.dart';
@@ -51,6 +52,9 @@ class MessageInfo extends StatelessWidget {
           // height: 40,
         ),
       ),
+      onTap: () {
+        Get.toNamed("/home/message/chat", arguments: {"id":1});
+      },
       title: Text("前端瞎折腾"),
       subtitle: Text("你要的答案我没有学习"),
     ),
@@ -160,8 +164,6 @@ class MessageInfo extends StatelessWidget {
           )
         ],
       ),
-    
-    
     );
   }
 }

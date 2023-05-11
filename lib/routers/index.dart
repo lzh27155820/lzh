@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:lzh/pages/home/message/chat/index.dart';
 import 'package:lzh/pages/login/index.dart';
 import 'package:lzh/pages/home/message/index.dart';
 
@@ -9,5 +10,6 @@ class Routers {
     GetPage(name: "/", page: () => NavigationBar()),
     GetPage(name: "/login", page: () => Login()),
     GetPage(name: "/home/message", page: () => Message()),
+    GetPage(name: "/home/message/chat", page: () => Chat()),
   ];
 }

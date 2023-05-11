@@ -6,6 +6,13 @@
   "description": "哔哩哔哩图标",
   "glyphs": [
     {
+      "icon_id": "7874537",
+      "name": "照片",
+      "font_class": "zhaopian",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
       "icon_id": "2772109",
       "name": "通信录",
       "font_class": "tongxinlu1-copy",
