@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.changeTheme(ThemeData.light());
     // 1.手机的物理分辨率
     final physicalWidth = window.physicalSize.width;
     final physicalHeight = window.physicalSize.height;

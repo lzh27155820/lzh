@@ -11,7 +11,7 @@ import 'package:lzh/widget/wire.dart';
 class UserPage extends StatelessWidget {
   UserPage({super.key});
 
-  bool flag = true;
+  bool flag = false;
 
   @override
   Widget build(BuildContext context) {
